@@ -1,0 +1,33 @@
+{
+  "name": "blockchain",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "lib/blockchain/contracts",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/blockchain",
+        "main": "libs/blockchain/src/index.ts",
+        "tsConfig": "libs/blockchain/tsconfig.lib.json",
+        "assets": ["libs/blockchain/*.md"]
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx hardhat test",
+        "cwd": "lib/blockchain"
+      }
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "npx hardhat run scripts/deploy.js",
+        "cwd": "lib/blockchain"
+      }
+    }
+  }
+}

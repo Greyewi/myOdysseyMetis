@@ -1,0 +1,5 @@
+-- CreateEnum
+CREATE TYPE "GoalCategory" AS ENUM ('EDUCATION', 'HEALTH', 'CAREER', 'FINANCE', 'PERSONAL', 'HOBBIES', 'RELATIONSHIPS', 'TRAVEL', 'OTHER');
+
+-- AlterTable
+ALTER TABLE "Goal" ADD COLUMN     "category" "GoalCategory" NOT NULL DEFAULT 'OTHER';

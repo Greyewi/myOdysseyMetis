@@ -1,0 +1,137 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0.5rem 1rem;
+  }
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: #333;
+}
+
+.logoContainer:hover {
+  color: #666;
+}
+
+@media (max-width: 480px) {
+  .logoContainer {
+    gap: 0.25rem;
+  }
+}
+
+.logoImage {
+  height: 33px;
+  width: auto;
+}
+
+@media (max-width: 480px) {
+  .logoImage {
+    height: 40px;
+  }
+}
+
+.logoText {
+  font-size: 1.25rem;
+  font-weight: bold;
+  background: linear-gradient(135deg, #0369a1 0%, #0ea5e9 50%, rgb(14, 165, 233) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 480px) {
+  .logoText {
+    font-size: 1rem;
+  }
+}
+
+.betaTag {
+  font-size: 0.6rem;
+  font-weight: bold;
+  background-color: #0ea5e9;
+  color: white;
+  padding: 1px 4px;
+  border-radius: 3px;
+  margin-left: 4px;
+  vertical-align: top;
+  position: relative;
+  top: -4px;
+}
+
+@media (max-width: 480px) {
+  .betaTag {
+    font-size: 0.5rem;
+    padding: 1px 3px;
+    margin-left: 2px;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-grow: 1;
+  margin-left: 2rem;
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+}
+
+.navLink {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.navLink:hover {
+  color: #666;
+}
+
+.cabinetButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.8rem;
+  background: #2196F3;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.cabinetButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.2);
+}
+
+@media (max-width: 480px) {
+  .cabinetButton {
+    padding: 0.35rem 0.7rem;
+    font-size: 14px;
+  }
+} 

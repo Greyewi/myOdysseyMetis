@@ -1,0 +1,16 @@
+{
+  "projectId": "a303940cd3fa457c213d481ab5957125",
+  "relayUrl": "wss://relay.walletconnect.com",
+  "metadata": {
+    "name": "My Odyssey",
+    "description": "Create a goal, commit real value, and be rewarded when you succeed.",
+    "url": "https://myodyssey.me",
+    "icons": ["https://myodyssey.me/assets/myodyssey-logo.png"]
+  },
+  "mobileLinks": [
+    "metamask",
+    "trust",
+    "rainbow",
+    "coinbase"
+  ]
+} 

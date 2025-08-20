@@ -1,0 +1,112 @@
+.filters {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filterGroup {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+/* rc-select custom styles */
+.select {
+  width: 100% !important;
+}
+
+.select :global(.rc-select-selector) {
+  padding: 0.75rem 1rem !important;
+  border: 1px solid #e0e0e0 !important;
+  border-radius: 8px !important;
+  background: white !important;
+  font-size: 0.9rem !important;
+  color: #333 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  min-height: 42px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.select:hover :global(.rc-select-selector) {
+  border-color: #2196F3 !important;
+}
+
+.select:focus-within :global(.rc-select-selector) {
+  border-color: #2196F3 !important;
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1) !important;
+}
+
+.select :global(.rc-select-selection-item) {
+  color: #333 !important;
+  font-weight: 500 !important;
+}
+
+.select :global(.rc-select-arrow) {
+  color: #666 !important;
+  right: 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  height: 100% !important;
+  top: 0 !important;
+}
+
+/* Dropdown styles */
+.dropdown {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid #e0e0e0 !important;
+  background: white !important;
+  margin-top: 4px !important;
+  overflow: hidden !important;
+}
+
+.dropdown :global(.rc-select-dropdown-menu) {
+  padding: 4px 0 !important;
+  max-height: 256px !important;
+}
+
+.dropdown :global(.rc-select-dropdown-menu-item) {
+  padding: 8px 12px !important;
+  font-size: 0.9rem !important;
+  color: #333 !important;
+  transition: all 0.2s ease !important;
+  cursor: pointer !important;
+  line-height: 1.4 !important;
+}
+
+.dropdown :global(.rc-select-dropdown-menu-item-selected) {
+  background-color: #e3f2fd !important;
+  color: #2196F3 !important;
+  font-weight: 500 !important;
+}
+
+.dropdown :global(.rc-select-dropdown-menu-item-active) {
+  background-color: #f5f5f5 !important;
+}
+
+.dropdown :global(.rc-select-dropdown-menu-item-content) {
+  color: inherit !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .filters {
+    gap: 1rem;
+  }
+
+  .filterGroup {
+    min-width: 100%;
+  }
+} 

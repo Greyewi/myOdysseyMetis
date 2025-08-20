@@ -1,0 +1,166 @@
+.socialShare {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.shareButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: white;
+  text-decoration: none;
+  min-height: 44px;
+}
+
+.shareButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.shareButton:active {
+  transform: translateY(0);
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Platform-specific colors */
+.facebook {
+  background: linear-gradient(135deg, #1877f2, #0d6efd);
+}
+
+.facebook:hover {
+  background: linear-gradient(135deg, #166fe5, #0b5ed7);
+}
+
+.twitter {
+  background: linear-gradient(135deg, #1da1f2, #0ea5e9);
+}
+
+.twitter:hover {
+  background: linear-gradient(135deg, #1a91da, #0d94d8);
+}
+
+.reddit {
+  background: linear-gradient(135deg, #ff4500, #e63946);
+}
+
+.reddit:hover {
+  background: linear-gradient(135deg, #e63946, #dc2626);
+}
+
+.pinterest {
+  background: linear-gradient(135deg, #bd081c, #a11b20);
+}
+
+.pinterest:hover {
+  background: linear-gradient(135deg, #a11b20, #881114);
+}
+
+.linkedin {
+  background: linear-gradient(135deg, #0077b5, #005885);
+}
+
+.linkedin:hover {
+  background: linear-gradient(135deg, #006097, #004a6e);
+}
+
+.whatsapp {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+.whatsapp:hover {
+  background: linear-gradient(135deg, #22c55e, #0f766e);
+}
+
+.telegram {
+  background: linear-gradient(135deg, #0088cc, #006699);
+}
+
+.telegram:hover {
+  background: linear-gradient(135deg, #0077b3, #005580);
+}
+
+.instagram {
+  background: linear-gradient(135deg, #e4405f, #c13584);
+}
+
+.instagram:hover {
+  background: linear-gradient(135deg, #d63384, #a855f7);
+}
+
+.email {
+  background: linear-gradient(135deg, #ea4335, #d93025);
+}
+
+.email:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .buttons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  
+  .shareButton {
+    padding: 10px 12px;
+    font-size: 13px;
+    min-height: 40px;
+  }
+  
+  .icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .socialShare {
+    padding: 20px 16px;
+  }
+  
+  .title {
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .buttons {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  
+  .shareButton {
+    padding: 12px 16px;
+    font-size: 14px;
+    min-height: 44px;
+  }
+} 

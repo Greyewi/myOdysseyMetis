@@ -1,0 +1,165 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #1a1a1a;
+}
+
+.mainContent {
+  width: 100%;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.sectionTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.sectionText {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #444;
+}
+
+.aiSection, .commitmentSection {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.imageWrapper {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .contentWrapper {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .imageWrapper {
+    position: relative;
+    top: 0;
+    order: -1;
+  }
+
+  .image {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.stepCard {
+  background: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stepImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.stepContent {
+  padding: 1.5rem;
+}
+
+.stepTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.stepDescription {
+  color: #666;
+  line-height: 1.6;
+}
+
+.summary {
+  background-color: #f8f9fa;
+  padding: 3rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.summaryTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.summaryText {
+  font-size: 1.25rem;
+  color: #666;
+  max-width: 1300px;
+  margin: 0 auto;
+  line-height: 1.6;
+} 

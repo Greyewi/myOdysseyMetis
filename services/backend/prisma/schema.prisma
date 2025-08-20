@@ -1,0 +1,191 @@
+// prisma.schema
+generator client {
+  provider = "prisma-client-js"
+  output   = "../node_modules/.prisma/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         Int      @id @default(autoincrement())
+  address    String   @unique
+  walletType String?
+  login      String?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  nonce      String?
+  profileId  Int?
+
+  goals   Goal[]
+  profile Profile? @relation(fields: [profileId], references: [id])
+  wallets Wallet[]
+}
+
+model Profile {
+  id        Int      @id @default(autoincrement())
+  username  String?
+  email     String?
+  bio       String?
+  avatar    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  users User[]
+}
+
+model Goal {
+  id          Int            @id @default(autoincrement())
+  userId      Int
+  title       String
+  description String
+  deposit     Float?
+  deadline    DateTime
+  status      GoalStatus     @default(PENDING)
+  category    GoalCategory   @default(OTHER)
+  difficulty  GoalDifficulty @default(UNSET)
+  image       String?
+
+  // Share link functionality
+  shareToken String? @unique // Unique token for sharing goals
+
+  // AI-related metadata
+  achievabilityScore Float? // 0–1
+  aiAnalysisSummary  String? // Text summary from AI
+  aiReviewedAt       DateTime? // Optional, when AI did the last review
+  lastAiCompletionAttempt DateTime? // Last time AI completion was attempted
+
+  // User-provided context for AI evaluation
+  weeklyTimeCommitment Int? // hours per week user plans to commit
+  currentExperience    String? // user self-assessment, e.g. "beginner"
+  availableResources   String? // e.g. "mentor, $5000 budget, free time"
+  startingPoint        String? // e.g. "already completed 5 lessons"
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user       User            @relation(fields: [userId], references: [id])
+  wallets    Wallet[]
+  tasks      Task[]
+  evaluation GoalEvaluation?
+}
+
+model GoalEvaluation {
+  id              Int      @id @default(autoincrement())
+  goalId          Int      @unique
+  realismScore    Int // 0-100: how achievable is the goal
+  summary         String? // short text summary
+  analysisDetails Json? // JSON: what specifically influenced the result
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  goal Goal @relation(fields: [goalId], references: [id])
+}
+
+model Wallet {
+  id                Int           @id @default(autoincrement())
+  privateKey        String        @unique
+  publicKey         String        @unique
+  refundAddress     String?
+  network           WalletNetwork
+  lastBalance       String? // Store as string to preserve precision
+  lastBalanceUpdate DateTime?
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+  userId            Int
+  goalId            Int
+  tokenPrice        TokenPrice?   @relation(fields: [network], references: [network])
+
+  user User @relation(fields: [userId], references: [id])
+  goal Goal @relation(fields: [goalId], references: [id])
+}
+
+model Task {
+  id            Int          @id @default(autoincrement())
+  goalId        Int
+  title         String
+  description   String?
+  deadline      DateTime
+  status        TaskStatus   @default(PENDING)
+  priority      TaskPriority @default(MEDIUM)
+  sequence      Int // Order of execution within the goal
+  suggestedByAI Boolean      @default(false) // New field to mark AI-generated tasks
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+
+  goal Goal @relation(fields: [goalId], references: [id])
+}
+
+model TokenPrice {
+  id        Int           @id @default(autoincrement())
+  network   WalletNetwork
+  price     Float
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+  wallets   Wallet[]
+
+  @@unique([network])
+}
+
+enum GoalStatus {
+  PENDING // Initial state when goal is created but wallet has no balance
+  FUNDED // Wallet has balance but goal is not published
+  ACTIVE // Goal is published and in progress
+  COMPLETED // Goal successfully completed
+  FAILED // Goal failed
+}
+
+enum WalletNetwork {
+  TRC20
+  ERC20
+  ARBITRUM
+  OPTIMISM
+  POLYGON
+  BSC
+  SOLANA
+  BITCOIN
+  METIS
+}
+
+enum GoalCategory {
+  EDUCATION // Learning, courses, reading
+  HEALTH // Fitness, wellness, habits
+  CAREER // Professional development, job search
+  FINANCE // Saving, investing, budgeting
+  PERSONAL // Self-improvement, habits
+  HOBBIES // Creative activities, skills
+  RELATIONSHIPS // Family, friends, social
+  TRAVEL // Travel planning, experiences
+  OTHER // Any other category
+}
+
+enum GoalDifficulty {
+  EASY
+  MEDIUM
+  HARD
+  HARDCORE
+  UNSET
+}
+
+enum TaskStatus {
+  PENDING
+  ACTIVE
+  COMPLETED
+}
+
+enum TaskPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+model SyncState {
+  id          Int      @id @default(autoincrement())
+  blockId     Int      @default(0)
+  contractId  String   @unique
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}

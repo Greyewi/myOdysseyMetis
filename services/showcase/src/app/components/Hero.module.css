@@ -1,0 +1,126 @@
+.heroSection {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(33,150,243,0.05) 0%, rgba(33,150,243,0) 100%);
+  padding: 4rem 0;
+}
+
+.dark .heroSection {
+  background: linear-gradient(180deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 100%);
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  background: #2196F3;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.dark .description {
+  color: #a0a0a0;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .buttonContainer {
+    justify-content: center;
+  }
+}
+
+.primaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: white;
+  background-color: #2196F3;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.primaryButton:hover {
+  background-color: #1976D2;
+}
+
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2196F3;
+  background-color: transparent;
+  border: 2px solid #2196F3;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.secondaryButton:hover {
+  background-color: rgba(33, 150, 243, 0.1);
+}
+
+.dark .secondaryButton:hover {
+  background-color: rgba(33, 150, 243, 0.2);
+}
+
+.image {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.image img {
+  max-width: 100%;
+  height: auto;
+} 

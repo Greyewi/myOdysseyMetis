@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es2019",
+    "module": "commonjs",
+    "outDir": "dist",
+    "rootDir": "src",
+    "strict": false,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "types": ["node", "express"],
+    "baseUrl": ".",
+    "paths": {
+      "blockchain": ["./local-blockchain/index.ts"]
+    }
+  },
+  "include": ["src/**/*", "local-blockchain/**/*"],
+  "exclude": ["node_modules", "dist"]
+}

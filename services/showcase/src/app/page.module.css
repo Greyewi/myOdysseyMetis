@@ -1,0 +1,221 @@
+.hero {
+  background-color: #f8f9fa;
+  padding: 4rem 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.heroTitle {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heroButton {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.heroButton:hover {
+  background-color: #0056b3;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #1a1a1a;
+  text-align: center;
+  font-weight: 700;
+  background: linear-gradient(45deg, #2196F3, #00BCD4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.select {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  font-size: 0.9rem;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 200px;
+}
+
+.select:hover {
+  border-color: #2196F3;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #2196F3;
+  box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.1);
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.pageButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  font-size: 0.9rem;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pageButton:hover:not(:disabled) {
+  border-color: #2196F3;
+  color: #2196F3;
+}
+
+.pageButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pageInfo {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.goalCard {
+  background: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.goalCard:hover {
+  transform: translateY(-4px);
+}
+
+.goalImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.goalContent {
+  padding: 1.5rem;
+}
+
+.goalTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.goalDescription {
+  color: #666;
+  margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.goalMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.goalCategory {
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+}
+
+.goalStatus {
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.goalStatus.active {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.goalStatus.completed {
+  background-color: #cce5ff;
+  color: #004085;
+}
+
+.goalStatus.failed {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.goalBalance {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+.viewButton {
+  display: inline-block;
+  background-color: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.viewButton:hover {
+  background-color: #0056b3;
+} 
