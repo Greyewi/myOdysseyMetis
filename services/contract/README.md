@@ -5,8 +5,8 @@ A Solidity smart contract for goal commitment and accountability on the Metis bl
 ## Deployed Contract
 
 **Contract Address:** `0x44328E50C039cE9EB0E075f68AEB9DBa60a894c8`  
-**Network:** Metis Sepolia Testnet  
-**Explorer:** [View on Explorer](https://sepolia-explorer.metisdevops.link/address/0x44328E50C039cE9EB0E075f68AEB9DBa60a894c8)  
+**Network:** metis hyperion testnet 
+**Explorer:** [View on Explorer](https://hyperion-testnet-explorer.metisdevops.link/address/0x9001F31c94d4bf96D30f05467aEB09686EF945c1?tab=txs)  
 **Owner:** `0x0715cdCC40d2031e4619791CA855376723e59F83`
 
 ## How It Works
